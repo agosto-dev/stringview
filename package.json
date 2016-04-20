@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Agosto Development"
+  },
+  "description": "Mozilla StringView snippet",
+  "devDependencies": {},
+  "directories": {},
+  "homepage": "https://github.com/agosto-dev/stringview",
+  "license": "LGPL v3",
+  "main": "stringview.js",
+  "name": "stringview",
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agosto-dev/stringview.git"
+  },
+  "scripts": {
+    "test": "nodeunit tests.js"
+  },
+  "version": "2.0.1"
+}

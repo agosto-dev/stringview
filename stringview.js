@@ -456,7 +456,7 @@ StringView.uint6ToB64 = function (nUint6) {
 
 StringView.bytesToBase64 = function (aBytes) {
 
-  var sB64Enc = "";
+  var sB64Enc = "", diff;
 
   for (var nMod3, nLen = aBytes.length, nUint24 = 0, nIdx = 0; nIdx < nLen; nIdx++) {
     nMod3 = nIdx % 3;
@@ -468,9 +468,12 @@ StringView.bytesToBase64 = function (aBytes) {
     }
   }
 
-  return sB64Enc.replace(/A(?=A$|$)/g, "=");
+  diff = atob(sB64Enc).length - aBytes.length;
+
+  return sB64Enc.replace(diff === 1 ? /A$/g : /A(?=A$|$)/g, "=");
 
 };
+
 
 
 StringView.base64ToBytes = function (sBase64, nBlockBytes) {

@@ -454,26 +454,6 @@ StringView.uint6ToB64 = function (nUint6) {
 
 /* Base64 string to array encoding */
 
-// StringView.bytesToBase64 = function (aBytes) {
-
-//   var sB64Enc = "", diff;
-
-//   for (var nMod3, nLen = aBytes.length, nUint24 = 0, nIdx = 0; nIdx < nLen; nIdx++) {
-//     nMod3 = nIdx % 3;
-//     if (nIdx > 0 && (nIdx * 4 / 3) % 76 === 0) { sB64Enc += "\r\n"; }
-//     nUint24 |= aBytes[nIdx] << (16 >>> nMod3 & 24);
-//     if (nMod3 === 2 || aBytes.length - nIdx === 1) {
-//       sB64Enc += String.fromCharCode(StringView.uint6ToB64(nUint24 >>> 18 & 63), StringView.uint6ToB64(nUint24 >>> 12 & 63), StringView.uint6ToB64(nUint24 >>> 6 & 63), StringView.uint6ToB64(nUint24 & 63));
-//       nUint24 = 0;
-//     }
-//   }
-
-//   diff = atob(sB64Enc).length - aBytes.length;
-
-//   return sB64Enc.replace(diff === 1 ? /A$/g : /A(?=A$|$)/g, "=");
-
-// };
-
 StringView.bytesToBase64 = function (aBytes) {
 
   var sB64Enc = "", diff;
